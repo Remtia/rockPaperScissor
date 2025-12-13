@@ -102,7 +102,7 @@ a:hover::after {
 .card {
     max-width: 6rem;
     position: relative;
-    cursor: grab;
+    cursor: pointer;
 }
 
 .card::after {
@@ -126,5 +126,9 @@ a:hover::after {
 
 .btn-ctn {
     text-align: center;
+}
+.human-choice,
+.computer-choices {
+  transition: transform 0.2s ease;
 }
 
