@@ -9,8 +9,8 @@ const computerScoreElement = document.querySelector(".computer-score");
 const resultAnnouncement = document.querySelector(".result");
 const humanChoices = document.querySelectorAll(".human-choice");
 const computerChoices = document.querySelectorAll(".computer-choice");
-const gameOverElement = document.createElement('div')
-const body = document.querySelector('main')
+const gameOverElement = document.createElement("div");
+const body = document.querySelector("main");
 
 // gameOverElement.classList.add('game-over');
 // gameOverElement.style.position = 'absolute';
@@ -65,23 +65,35 @@ function playRound(humanChoice, computerChoice) {
   ) {
     resultAnnouncement.innerText = "You won this round!";
     return humanScore++;
-  } else {resultAnnouncement.innerText = "You lost this round :(";
+  } else {
+    resultAnnouncement.innerText = "You lost this round :(";
     return computerScore++;
   }
 }
 
 function handleHumanChoice(choice, humanCard) {
-    resetScale();
-    humanCard.style.transform = "scale(1.3)";
-    const computerChoice = getComputerChoice();
-    playRound(choice, computerChoice);
-    computerScoreElement.innerText = `Computer: ${computerScore}`
-    humanScoreElement.innerText = `You: ${humanScore}`
-    if(humanScore >= 5) {
-      resultAnnouncement.innerText = "Congrats!!! You beat the computer! Restart the game.";
-    } else if (computerScore >= 5) {
-      resultAnnouncement.innerText = "The computer won, nice game, try again.";
-    }
-
+  resetScale();
+  humanCard.style.transform = "scale(1.3)";
+  const computerChoice = getComputerChoice();
+  playRound(choice, computerChoice);
+  computerScoreElement.innerText = `Computer: ${computerScore}`;
+  humanScoreElement.innerText = `You: ${humanScore}`;
+  if (humanScore >= 5) {
+    resultAnnouncement.innerText =
+      "Congrats!!! You beat the computer! Restart the game.";
+    humanChoices.forEach((one) => {
+      one.style.display =  'none'
+    });
+    computerChoices.forEach((one) => {
+      one.style.display =  'none'
+    });
+  } else if (computerScore >= 5) {
+    resultAnnouncement.innerText = "The computer won, nice game, try again.";
+    humanChoices.forEach((one) => {
+      one.style.display =  'none'
+    });
+    computerChoices.forEach((one) => {
+      one.style.display =  'none'
+    });
+  }
 }
- 
