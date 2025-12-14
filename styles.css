@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0c002b;
+    color: #bbb3d3;
+    font-family: Geom;
+}
+
+img {
+    display: block;
+    width: 100px;
+    max-width: 5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+header {
+    text-align: center;
+    margin: 1rem 0rem 2.5rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2, h3 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+a {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #bbb3d3;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    background-color: #1d006b;
+    position: relative;
+
+}
+
+a::after {
+    content: '';
+    --angle: 0deg;
+    background: conic-gradient(from var(--angle), #00d5bf, #f526fa, #0c6bf0, #26006f, #26006f, #00d5bf);
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: 8px;
+    display: none;
+}
+
+
+a:hover::after {
+    animation: glowing-border 2.5s linear infinite;
+    display: inline;
+}
+
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes glowing-border {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+} 
+
+
+.choices-card {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.img-choice {
+    border-radius: 20px;
+    
+}
+
+.card {
+    max-width: 6rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.card::after {
+    content: '';
+    --angle: 0deg;
+    background: conic-gradient(from var(--angle), #00d5bf, #f526fa, #0c6bf0, #26006f, #26006f, #00d5bf);
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: 20px;
+    display: none;
+}
+
+.card:hover::after {
+    animation: glowing-border 2.5s linear infinite;
+    display: flex;
+}
+
+
+
+
+.btn-ctn {
+    text-align: center;
+}
+.human-choice,
+.computer-choices {
+  transition: transform 0.2s ease;
+}
+

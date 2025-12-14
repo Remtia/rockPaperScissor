@@ -1,12 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissor</title>
-</head>
-<body>
-    
-    <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <header>
+      <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <main>
+      <section class="computer-section">
+        <h2 class="computer-score">Computer: 0</h2>
+
+        <div class="choices-card">
+          <div id="rock-computer" class="computer-choice">
+            <img
+              class="img-choice"
+              src="computer-rock.png"
+              alt="hand showing rock sign"
+            />
+          </div>
+
+          <div id="paper-computer" class="computer-choice">
+            <img
+              class="img-choice"
+              src="computer-paper.png"
+              alt="hand showing paper sign"
+            />
+          </div>
+
+          <div id="scissors-computer" class="computer-choice">
+            <img
+              class="img-choice"
+              src="computer-scissors.png"
+              alt="hand showing scissors sign"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="result-section">
+        <h3 class="result">First to 5 win, click one to play:</h3>
+      </section>
+
+      <section class="human-section">
+        <div class="choices-card">
+          <div id="rock-human" class="human-choice card">
+            <img
+              class="img-choice"
+              src="human-rock.png"
+              alt="hand showing rock sign"
+            />
+          </div>
+
+          <div id="paper-human" class="human-choice card">
+            <img
+              class="img-choice"
+              src="human-paper.png"
+              alt="hand showing paper sign"
+            />
+          </div>
+
+          <div id="scissors-human" class="human-choice card">
+            <img
+              class="img-choice"
+              src="human-scissors.png"
+              alt="hand showing scissors sign"
+            />
+          </div>
+        </div>
+
+        <h2 class="human-score">You: 0</h2>
+
+        <div class="btn-ctn">
+          <a class="btn" href="index.html">Restart Game</a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
